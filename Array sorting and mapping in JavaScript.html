@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array sorting and mapping in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        button {
+            background: #00eaff;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #00eaff, 0 0 40px #00eaff;
+        }
+
+        span {
+            display: block;
+            margin-top: 8px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #00eaff;
+            font-size: 16px;
+            word-wrap: break-word;
+            box-shadow: 0 0 10px #00eaff;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>JS Arrays</h3>
+    <p>Click on the button to sort the array in Ascending or Descending:</p>
+
+    <button onclick="ascending()">Ascending Order</button>
+    <button onclick="descending()">Descending Order</button>
+
+    <p><b>Original Array:</b> <span id="original"></span></p>
+    <p><b>Sorted Array:</b> <span id="result"></span></p>
+
+    <script>
+        var points = [
+            405555599999,
+            999999999999999999999n,
+            7778888999000,
+            97777777799,
+            3634346654,
+            4436346463465,
+            46436346466,
+            4354365657665,
+            3443663465654,
+            440000000000000000,
+            346356565343,
+            646465434,
+            4356365654344,
+            643635654343,
+            346645654465454,
+            34565897569756979785645,
+            999e+999,
+            88e+55
+        ];
+
+        document.getElementById("original").innerHTML = points.join(", ");
+
+        function ascending() {
+            let sorted = [...points].sort((a, b) => Number(a) - Number(b));
+            document.getElementById("result").innerHTML = sorted.join(", ");
+        }
+
+        function descending() {
+            let sorted = [...points].sort((a, b) => Number(b) - Number(a));
+            document.getElementById("result").innerHTML = sorted.join(", ");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Mapping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        #product {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #00ffe5;
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 18px;
+            color: #00ffe5;
+            box-shadow: 0 0 20px #00ffe5;
+            display: inline-block;
+            max-width: 80%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px #00ffe5, 0 0 60px #00ffe5;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Multiply every element in the array by 99:</h4>
+    <p id="product"></p>
+
+    <script>
+        var numbers = [66, 23, 66, 777, 999, 300, 999e+5];
+
+        // multiply function
+        function myFunction(num) {
+            return num * 99;
+        }
+
+        var newarray = numbers.map(myFunction);
+        document.getElementById("product").innerHTML = newarray.join(" • ");
+    </script>
+</body>
+
+</html>
